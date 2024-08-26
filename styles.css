@@ -1,0 +1,237 @@
+:root {
+    /* Definición de colores personalizados usando variables CSS */
+    --colorAzul: #0A3871;
+    --colorFondo: #F3F5FC;
+    --colorBotonActivo: #0A3871;
+    --colorBotonInactivo: #D8DFE8;
+    --colorTextoBotonInactivo: #0A3871;
+    --colorBlanco: white;
+}
+
+body {
+    /* Estilos básicos para el cuerpo del documento */
+    background-color: var(--colorFondo);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.header {
+    /* Estilos para el encabezado y el logo */
+    background: none;
+    padding: 10px;
+    width: 120px;
+    height: 48px;
+}
+
+.header_Logo {
+    /* Tamaño del logo */
+    width: 120px;
+    height: 48px;
+}
+
+.contenedor {
+    /* Contenedor principal con diseño de cuadrícula */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    align-items: center;
+}
+
+.contenedor_ingresarTexto {
+    /* Contenedor para el área de texto y botones */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.ingresarTexto_textarea {
+    /* Estilos del área de texto para ingresar el texto */
+    width: 80%;
+    height: 370px;
+    font-size: 32px;
+    color: var(--colorAzul);
+    background: none;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.ingresarTexto_textarea::placeholder {
+    /* Estilo del texto de marcador de posición del área de texto */
+    color: var(--colorAzul);
+}
+
+.ingresarTexto_restriccionybotones {
+    /* Estilo para la sección de restricciones y botones */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ingresarTexto_restriccionybotones img {
+    /* Estilo de la imagen de advertencia */
+    margin-right: 8px;
+}
+
+.botones {
+    /* Contenedor de botones con espacio entre ellos */
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.botonEncriptar {
+    /* Estilos del botone de encriptar */
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    font-size: 16px;
+    background-color: var(--colorAzul);
+    color: var(--colorBlanco);
+}
+.botonDesencriptar {
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    font-size: 16px;
+    background-color: var(--colorBotonInactivo);
+    color: var(--colorAzul);
+}
+
+.mostrarResultado {
+    /* Estilo del contenedor que muestra el resultado */
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultadoTextarea {
+    /* Estilos del área de texto para mostrar el resultado */
+    width: auto;
+    height: 130px;
+    font-size: 24px;
+    color: var(--colorAzul);
+    background: none;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.mostrarResultado img {
+    /* Estilo de la imagen en el contenedor de resultados */
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.mostrarResultado p {
+    /* Estilo de los párrafos en el contenedor de resultados */
+    font-size: 16px;
+    color: var(--colorAzul);
+    margin: 5px 0;
+}
+
+.resaltarTexto {
+    /* Estilo destacado para el texto: Ningun mensaje fue encontrado */
+    font-size: 24px;
+}
+
+.botonCopiar {
+    /* Estilo del botón de copiar */
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    background-color: white;
+    color: #0A3871;
+    font-size: 16px;
+}
+
+footer {
+    /* Estilo del pie de página */
+    background-color: transparent;
+    height: 50px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    /* Ajustes para pantallas de tamaño mediano como tablets */
+    .contenedor {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+        width: 95%;
+    }
+
+    .botonEncriptar, .botonDesencriptar, .botonCopiar {
+        width: 100%; /* Botones se expanden al 100% del contenedor */
+    }
+
+    .mostrarResultado {
+        width: 90%; /* Asegura que el contenedor de resultados se ajuste */
+    }
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para pantallas de tamaño pequeño como teléfonos móviles */
+    .ingresarTexto_textarea {
+        width: 100%; /* Área de texto se expande al 100% del contenedor */
+        font-size: 18px; /* Tamaño de fuente más pequeño */
+        height: 200px; /* Altura reducida */
+    }
+    
+    .botones { /* Nuevo contenedor para los botones */
+        display: flex;
+        flex-direction: column; /* Apila los elementos en columna */
+    }
+    
+    .botonEncriptar, .botonDesencriptar, .botonCopiar {
+        width: 100%; /* Mantiene el ancho completo */
+        /* ... otros estilos ... */
+    }
+
+    .botonCopiar{
+        width: 100%;
+        font-size: 14px; /* Tamaño de fuente más pequeño */
+        height: 50px; /* Altura de botón reducida */
+    }
+
+    .resultadoTextarea {
+        height: 100px; /* Altura reducida para el área de resultados */
+        font-size: 18px; /* Tamaño de fuente más pequeño */
+    }
+    .mostrarResultado {
+        width: 80%; /* Asegura que el contenedor de resultados se ajuste */
+    }
+    
+    .mostrarResultado img {
+        width: 60%; /* Imagen más pequeña en pantallas pequeñas */
+    }
+
+    .header_Logo {
+        width: 80px; /* Logo más pequeño */
+        height: auto;
+    }
+
+    .header {
+        justify-content: left; /* Centra el logo en la parte superior */
+    }
+}
+
+

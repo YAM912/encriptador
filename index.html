@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="styles.css">   <!-- Vincula el archivo CSS para los estilos de la página -->
+</head>
+<body> <!-- Contiene el contenido visible de la página -->
+    <header> <!-- Define el encabezado de la página con el logo -->
+        <div class="header">
+            <img class="header__Logo" src="./Imagen/Logo.png" alt="Logo de Alura Latam">   <!-- Muestra el logo de la página -->
+        </div>
+    </header>
+    <main>
+        <div class="contenedor">
+            <div class="contenedor_ingresarTexto">   <!-- Sección para que el usuario ingrese texto -->
+                <textarea id="textoInicial" class="ingresarTexto_textarea" placeholder="Ingrese el texto aquí" cols="50" rows="20"></textarea>  <!-- Área para ingresar el texto a encriptar o desencriptar -->
+                <div class="ingresarTexto_restriccionybotones"> <!-- Restricciones y botones de acción para el usuario -->
+                    <img src="./Imagen/CirculoExclamacion.png" alt="Advertencia: Solo letras minúsculas y sin acentos"> <!-- Imagen y dvertencia de las restricciones de entrada de texto -->
+                    <span> Solo letras minúsculas y sin acentos</span>
+                    <div class="botones"> <!-- Botones para encriptar y desencriptar el texto ingresado -->
+                        <button class="botonEncriptar" id="botonEncriptar">Encriptar</button>
+                        <button class="botonDesencriptar" id="botonDesencriptar">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mostrarResultado">  <!-- Sección para mostrar el resultado de la encriptación o desencriptación -->
+                <textarea id="textoFinal" class="resultadoTextarea" name="resultado" cols="30" rows="10"></textarea> <!-- Área para muestrar el texto encriptado o desencriptado -->
+                <img src="./Imagen/Muñeco.png" alt="Imagen del muñeco">
+                <p><span class="resaltarTexto">Ningún mensaje fue encontrado</span></p> <!-- Mensaje por defecto si no se encuentra ningún texto -->
+                <p></p>
+                <p>Ingrese el texto que desee encriptar o desencriptar</p>
+                <button class="botonCopiar" id="botonCopiar">Copiar</button> <!-- Botón para copiar el texto encriptado o desencriptado -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Contenido para el pie de página -->
+    </footer>
+    <script src="encrip.js"></script> <!-- Vincula el archivo JavaScript-->
+</body>
+</html>
